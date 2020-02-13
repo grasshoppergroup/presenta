@@ -19,7 +19,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -49,7 +49,7 @@ import static mortar.bundler.BundleServiceRunner.getBundleServiceRunner;
  * A well intentioned but overly complex sample that demonstrates
  * the use of Mortar, Flow and Dagger in a single app.
  */
-public class MortarDemoActivity extends ActionBarActivity
+public class MortarDemoActivity extends AppCompatActivity
     implements ActionBarOwner.Activity, Flow.Dispatcher {
 
   @ScreenScope(MortarDemoActivity.class)

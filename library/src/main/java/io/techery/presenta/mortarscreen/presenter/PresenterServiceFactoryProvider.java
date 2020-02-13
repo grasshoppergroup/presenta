@@ -157,7 +157,7 @@ public class PresenterServiceFactoryProvider implements ServiceFactoryProvider<P
         // Find proper injectable method of component to inject presenter instance
         for (Method m : screenComponent.getClass().getDeclaredMethods()) {
           for (Class pClass : m.getParameterTypes()) {
-            if (pClass.equals(presenterClass)) {
+            if (pClass.equals(presenterClass) && m.getModifiers() != Modifier.PRIVATE) {
               cache.put(presenterClass, m);
               return m;
             }

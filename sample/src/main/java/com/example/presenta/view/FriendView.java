@@ -26,8 +26,6 @@ import com.example.presenta.screen.FriendScreen;
 
 import javax.inject.Inject;
 
-import butterknife.ButterKnife;
-import butterknife.InjectView;
 import io.techery.presenta.mortar.DaggerService;
 
 public class FriendView extends FrameLayout {
@@ -35,8 +33,7 @@ public class FriendView extends FrameLayout {
   @Inject
   FriendScreen.Presenter presenter;
 
-  @InjectView(R.id.friend_info)
-  TextView friendInfo;
+  private TextView friendInfo;
 
   public FriendView(Context context, AttributeSet attrs) {
     super(context, attrs);
@@ -46,7 +43,7 @@ public class FriendView extends FrameLayout {
   @Override
   protected void onFinishInflate() {
     super.onFinishInflate();
-    ButterKnife.inject(this);
+    friendInfo = findViewById(R.id.friend_info);
   }
 
   @Override

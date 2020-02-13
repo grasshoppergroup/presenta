@@ -1,5 +1,4 @@
 apply plugin: 'com.android.library'
-apply plugin: 'com.github.dcendents.android-maven'
 
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
@@ -12,18 +11,20 @@ android {
 }
 
 repositories {
+    google()
     jcenter()
     maven { url "https://jitpack.io" }
     maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
 }
 
 dependencies {
-    compile 'com.squareup.flow:flow:0.12'
-    compile 'com.squareup.flow:flow-path:0.12'
-    compile 'com.squareup.mortar:mortar:0.19'
-    provided 'com.google.dagger:dagger:2.0.1'
-    provided 'com.google.dagger:dagger-compiler:2.0.1'
-    provided 'org.glassfish:javax.annotation:10.0-b28'
+    implementation 'com.squareup.flow:flow:0.12'
+    implementation 'com.squareup.flow:flow-path:0.12'
+    implementation 'com.squareup.mortar:mortar:0.19'
+
+    implementation 'com.google.dagger:dagger:2.26'
+    annotationProcessor 'com.google.dagger:dagger-compiler:2.26'
+
 }
 
 // build a jar with source files
